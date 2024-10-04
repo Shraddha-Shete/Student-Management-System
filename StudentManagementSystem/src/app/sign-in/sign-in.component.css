@@ -1,0 +1,87 @@
+/* General form styling */
+.form {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    background: linear-gradient(to top, rgba(211, 238, 243, 0.989) 50%, rgba(211, 238, 243, 0.989) 50%);
+    margin: 30px auto; /* Center the form horizontally */
+    padding: 30px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: rgb(10, 10, 10);
+    background-color: transparent;
+    margin: 0;
+    padding: 10px 0;
+}
+
+/* Input fields styling */
+.form input {
+    width: 90%;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #ccc;
+    color: rgb(43, 42, 42);
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-sizing: border-box; /* Make sure padding is included in width */
+}
+
+.form input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+::placeholder {
+    color: rgb(100, 100, 100);
+    font-family: Arial;
+}
+
+/* Button styling */
+.btnn {
+    width: 100%;
+    padding: 12px;
+    /* background-color: #2200ff; */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 30px;
+   
+}
+
+.btnn:hover {
+    background-color: #0056b3;
+}
+
+/* Grid system for two-column layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px; /* Ensure columns don't shrink too much on smaller screens */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Stack columns on small screens */
+    }
+
+    .form {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,42 @@
+<h1 >Sign Up</h1>
+<div class="container mt-8">
+<form  class="form" #registrationForm="ngForm" (ngSubmit)="register()">
+<div class="row">
+  <div class="col">
+<label for="name">First Name : </label>
+<input type="text" [(ngModel)]="admin.firstName" name="firstName" placeholder="Enter Name"><br><br>
+</div>
+<div class="col">
+<label for="name">Last Name : </label>
+<input type="text" [(ngModel)]="admin.lastName" name="lastName" placeholder="Enter Name"><br><br>
+</div>
+</div>
+<div class="row">
+  <div class="col">
+<label for="email">Email : </label>
+<input type="email" id="email" [(ngModel)]="admin.email" name="email" placeholder="@gmail.com"><br><br>
+  </div>
+  <div class="col">
+<label for="mobNo">Mob No : </label>
+<input type="text" [(ngModel)]="admin.mobNo" name="mobNo" placeholder="Enter Mob number">
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+<label for="password">Password : </label>
+<input type="text" [(ngModel)]="admin.password" name="password" placeholder="Enter Password">
+  </div>
+  <div class="col">
+<label for="Confirmpassword">Confirm Password : </label>
+<input type="text" [(ngModel)]="admin.confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+<div *ngIf="!admin.passwordMatch() && registrationForm.form.get('confirmPassword')?.dirty">
+    Passwords do not match.
+  </div>
+  </div>
+</div>
+<br><br>
+
+<input type="submit" class="btnn" value="Register" [disabled]="registrationForm.invalid || !admin.passwordMatch()">
+</form>
+</div>
+
